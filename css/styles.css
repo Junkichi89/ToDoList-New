@@ -1,0 +1,40 @@
+body{
+
+font-family: 'Georgia';
+
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    padding: 0px;
+    line-height: 10px;
+  }
+/* .box {
+  /* position: relative;
+  height: 100px;
+  width: 200px */
+/* } */
+
+#btn {
+  margin-left: 2px;
+  border: 1px solid;
+  border-radius: 0.3em;  
+}
+
+.inp_con {
+border: 1px solid;
+border-radius: 0.3em;  
+}
+
+.inp_del {
+margin-top: 2px;
+margin-left: 2px;
+border: 1px solid;
+border-radius: 0.3em;  
+}
+
+
+tr {
+  margin-left: 20px;
+}

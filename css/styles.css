@@ -10,13 +10,8 @@ ul {
     padding: 0px;
     line-height: 10px;
   }
-/* .box {
-  /* position: relative;
-  height: 100px;
-  width: 200px */
-/* } */
 
-#btn {
+.button {
   margin-left: 2px;
   border: 1px solid;
   border-radius: 0.3em;  

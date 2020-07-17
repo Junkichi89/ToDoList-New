@@ -13,44 +13,44 @@ btn.addEventListener('click', () => {
   let text = document.getElementById('input_task');
   todo.task = text.value;
   todos.push(todo);
+  const tdStatus = document.createElement('td');
+  const statusBtn = document.createElement('button');
+  const tdDelete = document.createElement('td');
+  const delBtn = document.createElement('button');
+  const tdTask = document.createElement('td');
+  const tdNum = document.createElement('td');
 
-  //Todoを表示させる
-  const displayTodos = () => {
-    const tdTask = document.createElement('td');
-    const tdNum = document.createElement('td');
-    for (let index = 0; index < todos.length; index++) {
-      tdNum.innerHTML = `${index}`;
-      tdTask.innerHTML = `${todos[index].task}`;
-    }
-    // 状態ボタン（通常は作業中）
-    const statusBtn = () => {
-      const tdStatus = document.createElement('td');
-      const statusBtn = document.createElement('button');
-      statusBtn.textContent = todos[index].status;
-      tdStatus.appendChild(statusBtn);
-      tr.appendChild(tdStatus);
-      return tdStatus;
-    }
+   //Todo作成とインデックス
+  for (let index = 0; index < todos.length; index++) {
+    tdNum.innerHTML = `${index}`;
+    tdTask.innerHTML = `${todos[index].task}`;
+  }
 
-    //  削除ボタン
-    const delBtn = () => {
-      const tdDelete = document.createElement('td');
-      const delBtn = document.createElement('button');
-      delBtn.textContent = '削除';
-      tdDelete.appendChild(delBtn);
-      tr.appendChild(tdDelete);
-      return tdDelete;
-    }
+  // 状態ボタン（通常は作業中）
+  const statusBtnFunc = () => {
+    statusBtn.textContent = todos[index].status;
+    tdStatus.appendChild(statusBtn);
+    return tdStatus;
+  }
+  const statusButton = statusBtnFunc();
 
+  //  削除ボタン
+  const deleteBtnFunc = () => {
+    delBtn.textContent = '削除';
+    tdDelete.appendChild(delBtn);
+    return tdDelete;
+  }
+  const deleteButton = deleteBtnFunc();
+
+  //Todoリストの表示
+  const displayTodo = () => {
     tr.appendChild(tdNum);
     tr.appendChild(tdTask);
-    const statusButton = statusBtn();
-    const deleteButton = delBtn();
-    statusButton;
-    deleteButton;
-    text.value = '';
-    text.focus();
+    tr.appendChild(tdStatus);
+    tr.appendChild(tdDelete);
+    return document.querySelector('table').appendChild(tr);
   }
-  displayTodos();
-  document.querySelector('table').appendChild(tr);
+  const showTodo = displayTodo();
+  text.value = '';
+  text.focus();
 });
